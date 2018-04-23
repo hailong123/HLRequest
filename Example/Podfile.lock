@@ -1,15 +1,40 @@
 PODS:
-  - HLRequest (0.1.0)
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
+  - HLRequest (0.1.0):
+    - YTKNetwork
+  - YTKNetwork (2.0.4):
+    - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
   - HLRequest (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - YTKNetwork
 
 EXTERNAL SOURCES:
   HLRequest:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HLRequest: 3b4ff2d02d8e6c32c61b0a7789506253527ba7f2
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  HLRequest: eaef5fa3aa1a29ab3b0535c50ce3fc4f9be6d52e
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
 PODFILE CHECKSUM: d7d8e703a44c162d397596747629cb583747003e
 
