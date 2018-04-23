@@ -37,4 +37,8 @@ FOUNDATION_EXTERN NSString *const ZMCResponseMessageKey;
 
 @interface ZMCRequest : HXRequest
 
+@property (nonatomic, copy) NSDictionary *params;
+
+- (instancetype)initWithRequestWithParams:(NSDictionary *)params;
+
 @end

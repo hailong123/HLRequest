@@ -15,10 +15,10 @@ NSString *const ZMCResponseMessageKey = @"message";
 @implementation ZMCRequest
 
 #pragma mark - Life Cycle
-- (instancetype)init {
+- (instancetype)initWithRequestWithParams:(NSDictionary *)params {
     
     if (self = [super init]) {
-        
+        self.params = params;
     }
     
     return self;
@@ -30,9 +30,7 @@ NSString *const ZMCResponseMessageKey = @"message";
 - (void)preHandleRequestBusinessError:(HXRequest *)request
                          responseData:(id)responseData
                          responseCode:(NSInteger)responseCode
-                              message:(NSString *)message {
-    
-}
+                              message:(NSString *)message {}
 
 - (YTKRequestSerializerType)requestSerializerType {
     return YTKRequestSerializerTypeJSON;
@@ -40,6 +38,16 @@ NSString *const ZMCResponseMessageKey = @"message";
 
 - (YTKRequestMethod)requestMethod {
     return YTKRequestMethodPOST;
+}
+
+- (id)requestArgument {
+    return self.params;
+}
+
++ (NSDictionary *)commonHeaderFiled {
+    return @{
+             @"platform":@"iOS_iPhone"
+             };
 }
 
 #pragma mark - Private Method
