@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HLRequest_Example' do
+  pod 'HLRequest', :path => '../'
+
+  target 'HLRequest_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

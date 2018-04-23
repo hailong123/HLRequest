@@ -1,0 +1,16 @@
+PODS:
+  - HLRequest (0.1.0)
+
+DEPENDENCIES:
+  - HLRequest (from `../`)
+
+EXTERNAL SOURCES:
+  HLRequest:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HLRequest: 3b4ff2d02d8e6c32c61b0a7789506253527ba7f2
+
+PODFILE CHECKSUM: d7d8e703a44c162d397596747629cb583747003e
+
+COCOAPODS: 1.5.0
