@@ -61,17 +61,17 @@
                          dataArray:(NSMutableArray *)dataArray
                       responseCode:(NSInteger)responseCode
                            message:(NSString *)message
-                    currentRequest:(ZMCRequest *)requeset {}
+                    currentRequest:(HXRequest *)requeset {}
 
 - (void)handleSuccessRequestResponse:(id)response
                            dataArray:(NSMutableArray *)dataArray
                         responseCode:(NSInteger)responseCode
                              message:(NSString *)message
-                      currentRequest:(ZMCRequest *)requeset {}
+                      currentRequest:(HXRequest *)requeset {}
 
 - (void)requestFailResponseCode:(NSInteger)responseCode
                         message:(NSString * _Nullable)message
-                        request:(__kindof ZMCRequest * _Nonnull)request {
+                        request:(__kindof HXRequest * _Nonnull)request {
     [[NSException exceptionWithName:@"方法调用异常"
                              reason:@"此方法需子类重写"
                            userInfo:nil] raise];
@@ -80,7 +80,7 @@
 - (void)requestSuccessHandleResponse:(id _Nullable)response
                         responseCode:(NSInteger)responseCode
                              message:(NSString * _Nullable)message
-                             request:(__kindof ZMCRequest * _Nonnull)request {
+                             request:(__kindof HXRequest * _Nonnull)request {
     [[NSException exceptionWithName:@"方法调用异常"
                              reason:@"此方法需子类重写"
                            userInfo:nil] raise];

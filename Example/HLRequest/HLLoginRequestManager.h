@@ -8,6 +8,8 @@
 
 #import "ZMCBaseRequestManager.h"
 
+#import "ZMCRequest.h"
+
 @interface HLLoginRequest : ZMCRequest
 
 @end

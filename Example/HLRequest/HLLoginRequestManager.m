@@ -11,7 +11,7 @@
 @implementation HLLoginRequest
 
 - (NSString *)requestUrl {
-    return @"";
+    return @"http://127.0.0.1:8880/Meet/public/phone_login";
 }
 
 @end

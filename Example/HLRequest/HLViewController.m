@@ -10,11 +10,15 @@
 
 #import "HLLoginRequestManager.h"
 
+#import <AFNetworking/AFNetworking.h>
+
 @interface HLViewController ()
 <
     ZMCBaseRequestProtocol,
     ZMCRequestDataProcessProtocol
 >
+
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 @property (nonatomic, strong) HLLoginRequestManager *loginRequestManager;
 
@@ -33,15 +37,23 @@
 
 #pragma mark - Delegate
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.loginRequestManager sendRequest];
+        [self.loginRequestManager sendRequest];
+//    [self.manager POST:@"http://127.0.0.1:8880/Meet/public/phone_login"
+//            parameters:@{@"id":@1}
+//              progress:^(NSProgress * _Nonnull uploadProgress) {
+//                  NSLog(@"");
+//              } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//                  NSLog(@"成功");
+//              } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//                  NSLog(@"失败");
+//              }];
 }
 
 #pragma mark ZMCBaseRequestProtocol
 - (NSDictionary *)requestParamsWithRequestManager:(__kindof ZMCBaseRequestManager *)requestManager {
     if ([requestManager isKindOfClass:[HLLoginRequestManager class]]) {
         return @{
-                 @"userID":@(1),
-                 @"name":@"哈哈"
+                 @"id":@(1)
                  };
     }
     
@@ -80,6 +92,18 @@
     }
     
     return _loginRequestManager;
+}
+
+- (AFHTTPSessionManager *)manager {
+    if (!_manager) {
+        _manager = [AFHTTPSessionManager manager];
+        _manager.requestSerializer  = [AFHTTPRequestSerializer serializer];
+        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+
+    }
+    
+    return _manager;
 }
 
 #pragma mark - Delloc

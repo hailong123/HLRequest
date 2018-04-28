@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ZMCRequest.h"
+#import "HXRequest.h"
 #import "ZMCBaseRequestProtocol.h"
 #import "ZMCRequestDataProcessProtocol.h"
 
@@ -20,7 +20,7 @@
 @property (nonatomic, weak, nullable) id <ZMCBaseRequestProtocol> requestParamsDelegate;
 @property (nonatomic, weak, nullable) id <ZMCRequestDataProcessProtocol> dataProcessDelegate;
 
-@property (nonatomic, strong, nullable) ZMCRequest* currentRequest;
+@property (nonatomic, strong, nullable) HXRequest* currentRequest;
 
 @property (nonatomic, weak, nullable) id currentViewController;
 
@@ -28,11 +28,11 @@
 
 - (void)requestFailResponseCode:(NSInteger)responseCode
                         message:(NSString * _Nullable)message
-                        request:(__kindof ZMCRequest *_Nonnull)request;
+                        request:(__kindof HXRequest *_Nonnull)request;
 
 - (void)requestSuccessHandleResponse:(id _Nullable)response
                         responseCode:(NSInteger)responseCode
                              message:(NSString * _Nullable)message
-                             request:(__kindof ZMCRequest *_Nonnull)request;
+                             request:(__kindof HXRequest *_Nonnull)request;
 
 @end

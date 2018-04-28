@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ZMCRequest;
+@class HXRequest;
 
 @protocol ZMCRequestDataProcessProtocol <NSObject>
 
@@ -17,13 +17,13 @@
                            dataArray:(NSMutableArray * _Nullable)dataArray
                         responseCode:(NSInteger)responseCode
                              message:(NSString * _Nullable)message
-                      currentRequest:(ZMCRequest *_Nonnull)requeset;
+                      currentRequest:(HXRequest *_Nonnull)requeset;
 
 //基类协议 (获取失败的数据)
 - (void)handleFaildRequestResponse:(id _Nullable )response
                          dataArray:(NSMutableArray * _Nullable)dataArray
                      responseCode:(NSInteger)responseCode
                           message:(NSString * _Nullable)message
-                   currentRequest:(ZMCRequest *_Nonnull)requeset;
+                   currentRequest:(HXRequest *_Nonnull)requeset;
 
 @end
