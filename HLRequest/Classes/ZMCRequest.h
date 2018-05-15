@@ -22,6 +22,11 @@
 
 @property (nonatomic, weak, nullable) id currentViewController;
 
+#pragma mark - Block Method
+
+
+#pragma mark - Delegate Method
+
 - (void)sendRequest;
 
 - (void)requestFailResponseCode:(NSInteger)responseCode

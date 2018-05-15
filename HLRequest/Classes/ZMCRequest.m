@@ -53,7 +53,6 @@ NSString *const ZMCResponseMessageKey = @"message";
 }
 
 #pragma mark - Private Method
-- (NSDictionary * _Nullable)requestParamsWithRequestManager:(id)requestManager {return nil;}
 
 - (void)handleFaildRequestResponse:(id)response
                          dataArray:(NSMutableArray *)dataArray
@@ -66,6 +65,12 @@ NSString *const ZMCResponseMessageKey = @"message";
                         responseCode:(NSInteger)responseCode
                              message:(NSString *)message
                       currentRequest:(ZMCRequest *)requeset {}
+
+- (NSDictionary *)requestParamsWithRequest:(__kindof ZMCRequest *)request {
+    @throw [NSException exceptionWithName:@"方法调用异常"
+                                   reason:@"此方法需子类重写"
+                                 userInfo:nil];
+}
 
 - (void)requestFailResponseCode:(NSInteger)responseCode
                         message:(NSString * _Nullable)message
@@ -85,11 +90,12 @@ NSString *const ZMCResponseMessageKey = @"message";
 }
 
 #pragma mark Setter And Getter
+
 - (void)setRequestParamsDelegate:(id<ZMCBaseRequestProtocol>)requestParamsDelegate {
     
     _requestParamsDelegate = requestParamsDelegate;
     
-    _hasDes.ZMCRequestParamsManagerDelegate = [requestParamsDelegate respondsToSelector:@selector(requestParamsWithRequestManager:)];
+    _hasDes.ZMCRequestParamsManagerDelegate = [requestParamsDelegate respondsToSelector:@selector(requestParamsWithRequest:)];
 }
 
 - (void)setDataProcessDelegate:(id<ZMCRequestDataProcessProtocol>)dataProcessDelegate {

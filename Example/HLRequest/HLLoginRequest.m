@@ -17,9 +17,13 @@ NSString * const ksss7 = @"ddd";
 
 @implementation HLLoginRequest
 
+#pragma mark - configuration
+
 - (NSString *)requestUrl {
     return @"http://120.26.11.96:8081/community/v2.0.0/user/homepage";
 }
+
+#pragma mark - callback
 
 - (void)requestFailResponseCode:(NSInteger)responseCode
                         message:(NSString * _Nullable)message
