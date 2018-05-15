@@ -6,39 +6,31 @@
 //
 
 #import "HXRequest.h"
-
-#define ZMCStartRequest(ZMCREQUEST) [ZMCREQUEST startWithCompletionBlockWithSuccess:^(id  _Nullable responseData, NSInteger responseCode, NSString * _Nullable message, HXRequest * _Nonnull request) { \
-if (successHandler) { \
-successHandler(responseData, responseCode, message); \
-}\
-} businessFail:^(id  _Nullable responseData, NSInteger responseCode, NSString * _Nullable message, HXRequest * _Nonnull request) {\
-if (businessFailHandler) {\
-businessFailHandler(responseData, responseCode, message);\
-}\
-} netFailure:^(NSError * _Nullable error, NSInteger netStatusCode, HXRequest * _Nonnull request) {\
-if (netFailHandler) {\
-netFailHandler(error, netStatusCode);\
-}\
-}];
-
-typedef NS_ENUM(NSInteger, ZMCRequestResponseCodeType)
-{
-    ZMCRequestResponseCodeTypeError          = -1,
-    ZMCRequestResponseCodeTypeSuccess        = 0,
-    ZMCRequestResponseCodeTypeInvalidSession = 11,
-    ZMCRequestResponseCodeTypeForcedUpdate   = 12,
-};
-
-
-
-FOUNDATION_EXTERN NSString *const ZMCResponseErrorKey;
-FOUNDATION_EXTERN NSString *const ZMCResponseDataKey;
-FOUNDATION_EXTERN NSString *const ZMCResponseMessageKey;
+#import "ZMCBaseRequestProtocol.h"
+#import "ZMCRequestDataProcessProtocol.h"
 
 @interface ZMCRequest : HXRequest
+<
+    ZMCBaseRequestProtocol,
+    ZMCRequestDataProcessProtocol
+>
 
-@property (nonatomic, copy) NSDictionary *params;
+@property (nonatomic, copy, readonly) NSDictionary *params;
 
-- (instancetype)initWithRequestWithParams:(NSDictionary *)params;
+@property (nonatomic, weak, nullable) id <ZMCBaseRequestProtocol> requestParamsDelegate;
+@property (nonatomic, weak, nullable) id <ZMCRequestDataProcessProtocol> dataProcessDelegate;
+
+@property (nonatomic, weak, nullable) id currentViewController;
+
+- (void)sendRequest;
+
+- (void)requestFailResponseCode:(NSInteger)responseCode
+                        message:(NSString * _Nullable)message
+                        request:(__kindof ZMCRequest *_Nonnull)request;
+
+- (void)requestSuccessHandleResponse:(id _Nullable)response
+                        responseCode:(NSInteger)responseCode
+                             message:(NSString * _Nullable)message
+                             request:(__kindof ZMCRequest *_Nonnull)request;
 
 @end

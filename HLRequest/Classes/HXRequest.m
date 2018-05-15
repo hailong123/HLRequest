@@ -9,8 +9,30 @@
 #import "HXRequest.h"
 
 @interface HXRequest()<YTKRequestDelegate>
+
 @property (nonatomic, strong) NSDate *requestimeBeginTime;
 @property (nonatomic, assign) NSTimeInterval requesCostTime;
+
+//----config----
+/**
+ defautlt 0
+ */
+@property (nonatomic, assign) NSInteger successCodeValue;
+/**
+ defautlt @"message"
+ */
+@property (nonatomic, copy, nonnull) NSString *responseMsgKey;
+
+/**
+ defautlt @"code"
+ */
+@property (nonatomic, copy, nonnull) NSString *responseCodeKey;
+
+/**
+ defautlt @"data"
+ */
+@property (nonatomic, copy, nonnull) NSString *responseDataKey;
+
 @end
 
 @implementation HXRequest

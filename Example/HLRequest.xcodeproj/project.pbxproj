@@ -24,7 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7BF67B2D6A6AF069C55E51B4 /* Pods_HLRequest_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE75FE3D28C7F05F5A486E75 /* Pods_HLRequest_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		FEB43BD4208DD7A10076B9D8 /* HLLoginRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB43BD3208DD7A10076B9D8 /* HLLoginRequestManager.m */; };
+		FED9FE5420AA7EB0002EF1BD /* HLLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9FE5320AA7EB0002EF1BD /* HLLoginRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +68,8 @@
 		C79F7A86D5EB6D6581434059 /* Pods_HLRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1B3FAC97E5A51CF98E8F4C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EEC461DDF4C8C441BCEE83F9 /* Pods-HLRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLRequest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLRequest_Example/Pods-HLRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
-		FEB43BD2208DD7A10076B9D8 /* HLLoginRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLLoginRequestManager.h; sourceTree = "<group>"; };
-		FEB43BD3208DD7A10076B9D8 /* HLLoginRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLoginRequestManager.m; sourceTree = "<group>"; };
+		FED9FE5220AA7EB0002EF1BD /* HLLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLLoginRequest.h; sourceTree = "<group>"; };
+		FED9FE5320AA7EB0002EF1BD /* HLLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLoginRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 			children = (
 				6003F59C195388D20070C39A /* HLAppDelegate.h */,
 				6003F59D195388D20070C39A /* HLAppDelegate.m */,
-				FEB43BD2208DD7A10076B9D8 /* HLLoginRequestManager.h */,
-				FEB43BD3208DD7A10076B9D8 /* HLLoginRequestManager.m */,
+				FED9FE5220AA7EB0002EF1BD /* HLLoginRequest.h */,
+				FED9FE5320AA7EB0002EF1BD /* HLLoginRequest.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HLViewController.h */,
 				6003F5A6195388D20070C39A /* HLViewController.m */,
@@ -364,8 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB43BD4208DD7A10076B9D8 /* HLLoginRequestManager.m in Sources */,
 				6003F59E195388D20070C39A /* HLAppDelegate.m in Sources */,
+				FED9FE5420AA7EB0002EF1BD /* HLLoginRequest.m in Sources */,
 				6003F5A7195388D20070C39A /* HLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

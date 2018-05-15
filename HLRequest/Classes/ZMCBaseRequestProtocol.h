@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 
 @class ZMCRequest;
-@class ZMCBaseRequestManager;
 
 @protocol ZMCBaseRequestProtocol <NSObject>
 
@@ -18,6 +17,6 @@
 
 @required
 //获取请求参数
-- (NSDictionary *_Nullable)requestParamsWithRequestManager:(__kindof ZMCBaseRequestManager *_Nonnull)requestManager;
+- (NSDictionary *_Nullable)requestParamsWithRequest:(__kindof ZMCRequest *_Nonnull)request;
 
 @end

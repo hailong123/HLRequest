@@ -15,10 +15,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    NSSet *contentTypeSet = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json",@"text/html",@"text/css", nil];
-    [[YTKNetworkAgent sharedAgent] setValue:contentTypeSet forKeyPath:@"_manager.responseSerializer.acceptableContentTypes"];
-    
-    NSLog(@"%@", [[YTKNetworkAgent sharedAgent] valueForKeyPath:@"self.manager.responseSerializer.acceptableContentTypes"]);
+//    NSSet *contentTypeSet = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json",@"text/html",@"text/css", nil];
+//    [[YTKNetworkAgent sharedAgent] setValue:contentTypeSet forKeyPath:@"_manager.responseSerializer.acceptableContentTypes"];
     
       return YES;
 }
