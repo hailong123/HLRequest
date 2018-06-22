@@ -11,10 +11,6 @@
 
 @protocol ZMCBaseRequestProtocol <NSObject>
 
-@optional
-//指定请求类
-- (ZMCRequest *_Nonnull)requestClass;
-
 @required
 //获取请求参数
 - (NSDictionary *_Nullable)requestParamsWithRequest:(__kindof ZMCRequest *_Nonnull)request;
